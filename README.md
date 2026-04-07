@@ -1,2 +1,19 @@
-# Bitmap-to-SVG
-Convert a bitmap file into a REAL SVG file without ANY LOSS
+# Bitmap-to-SVG/位图转SVG
+Convert a bitmap file into a REAL SVG file without ANY LOSS/将位图文件转换为**真正的**svg文件，并且**没有损失**
+
+## Background/背景
+偶尔我们打开一个svg文件，但放大之后却能发现像位图文件一样的锯齿状边缘。这时我们再点击F12审查一下，就可以看见这个：  
+![](https://t.tutu.to/img/5V06P)  
+竟然是**data:image**!  
+这意味着这张图片实际上是位图图片，而且是把图片信息转为Base64之后存入svg中。不仅**占用了更大的空间**，还**误导**人们以为这是一张矢量图！这实在是**太邪恶了**！
+
+
+
+所以，受此启发，我想到了把位图文件转化为真正svg图片的方法：  
+![](https://t.tutu.to/img/5Vqr4)  
+如图，这显然就是一个svg图片，而且是矢量图文件。  
+如果说把位图图片转成base64编码在放进svg中会遭万人唾弃，那么，将位图图片的每一个像素点转换成矢量图图片中的一个正方形，不就可以遭亿人唾弃了吗？  
+虽然这么做显示效果是一样的，但是按F12审查之后，你确确实实可以看到这就是矢量图。只不过，体积相比base64编码的位图svg文件还要稍大亿点而已。  
+总之，这就是一个十分无聊的仓库。如果你是来寻找高效将位图转为矢量图的方法的，那么你来错地方了。这个项目不过是一个玩笑。  
+
+## Instruction for use/使用方法
